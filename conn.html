@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<php
+session_start();
+
+if(isset($_POST['email']) && !empty($_POST['mdp'])){
+include "config.html";
+
+$email = $_POST['email'];
+$password = $_POST['mdp'];
+$sql1 = "SELECT * FROM `admin` WHERE `email`= :email AND `mdp` = :mdp";
+$con = $bdd-prepare($sql1);
+$con-execute([
+            'email' = $email,
+            'mdp' = $password
+]);
+$row = $con-fetch(PDO::FETCH_ASSOC);
+if($con-rowCount() == 1){
+    $_SESSION['admin'] = $row['nom']." ".$row['prenom'];
+   
+    header("Location:dashbord.html?admin=1");
+}else{
+    header("Location:adminlogin.html?msg=1");
+}
+
+}else{
+    header("Location:index.php?msg=0");
+}
+?>
+
+</body>
+</html>

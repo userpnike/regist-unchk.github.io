@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+
+
+<php
+$tite = "login";
+include_once "header.php";
+
+?>
+<div>
+    <h1 style="text-align: center; color:blue">Page de Login</h1>
+</div>
+
+<br><br>
+<div style="width: 100%; text-align: center;">
+<form action="conn.html" method="post">
+    <label for="email"> Login  :</label>
+    <input type="email" name="email" placeholder="email"> <br><br>
+    <label for="password">Password  :</label>
+    <input type="password" name="mdp" placeholder="password"> <br>
+    <br><br>
+   <!--<button style="margin-left: 250px; width: 150px; height: 33px;" type="submit" type ="submit">log-in</button>-->
+
+<a style="margin-left: 250px; width: 250px; height: 33px;"href="dashbord.html">log-in</a>
+</div>
+</form>
+<style>
+    form{
+        display: block;
+    }
+    input{
+        margin: 10px 10px 30px 30px;
+        width: 300px;
+        height: 33px;
+    }
+</style>
+
+<php include_once "footer.php"; ?>
+</body>
+</html>
